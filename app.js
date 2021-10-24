@@ -1,5 +1,6 @@
 const express = require('express')
 const session = require('express-session')
+const usePassport = require('./config/passport')
 const port = 3000
 const exphbs = require('express-handlebars')
 // const restaurantList = require('./restaurant.json')
@@ -32,6 +33,7 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 // 設定每一筆請求都會透過 methodOverride 進行前置處理
 app.use(methodOverride('_method'))
+usePassport(app)
 app.use(routes)
 
 // app.get('/', (req, res) => {
