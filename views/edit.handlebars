@@ -1,0 +1,97 @@
+{{!--
+
+
+<input type="text">
+<input>
+<input type="text">
+<input type="text" <input type="text" <input type="number" <input type="text" placeholder="name"
+  value="{{ todo.description }}">
+<button type="submit">Save</button>
+<a href="/">back</a>
+</form> --}}
+<header>
+  <!-- navigation -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png"
+          width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
+        我的餐廳清單
+      </a>
+    </div>
+  </nav>
+
+  <div class="banner"></div>
+</header>
+
+<div class="container create-restaurant">
+
+  <form action="/restaurants/{{ restaurant._id }}?_method=PUT" method="POST" style="display: inline;">
+
+    <div class="mb-3">
+      <label for="name" class="form-label">餐廳名稱</label>
+      <input type="text" class="form-control" id="name" placeholder="name" name="name" value="{{ restaurant.name }}"
+        required>
+    </div>
+
+    <div class="mb-3">
+      <label for="name_en" class="form-label">餐廳英文名稱</label>
+      <input type="text" class="form-control" id="name" placeholder="name" name="name_en"
+        value="{{ restaurant.name_en}}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="category" class="form-label">類別</label>
+      <select class="form-control" id="category" placeholder="category" name="category">
+        <option value="類別" required>{{ restaurant.category}}</option>
+        <option value="中東料理">中東料理</option>
+        <option value="日本料理">日本料理</option>
+        <option value="義式餐廳">義式餐廳</option>
+        <option value="美式">美式</option>
+        <option value="酒吧">酒吧</option>
+        <option value="咖啡">咖啡</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">圖片網址</label>
+      <input type="url" class="form-control" name="image" id="image" placeholder="https://..."
+        value="{{ restaurant.image }}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="location" class="form-label">地址</label>
+      <input type="text" class="form-control" name="location" id="location" placeholder="location"
+        value="{{ restaurant.location }}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="rating " class="form-label">評價</label>
+      <input type="number" class="form-control" name="rating" id="rating" step="0.1" min="0" max="5"
+        placeholder="rating" value="{{ restaurant.rating }}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="google_map" class="form-label">goole map 網址</label>
+      <input type="url" class="form-control" name="google_map" id="google_map" placeholder="https://..."
+        value="{{ restaurant.google_map }}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">電話</label>
+      <input type="number" class="form-control" name="phone" id="phone" placeholder="phone"
+        value="{{ restaurant.phone }}" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">簡介</label>
+      <textarea type="text" class="form-control" name="description" id="description" placeholder="description"
+        required> {{ restaurant.description }}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-info m-1">save</button>
+  </form>
+  <form action="/" method="GET" style="display: inline;">
+    <button class="btn btn-info m-1" type="submit">back</button>
+  </form>
+</div>

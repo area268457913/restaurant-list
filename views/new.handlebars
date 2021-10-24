@@ -1,0 +1,83 @@
+<header>
+  <!-- navigation -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png"
+          width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
+        我的餐廳清單
+      </a>
+    </div>
+  </nav>
+
+  <div class="banner"></div>
+</header>
+
+<div class="container create-restaurant">
+
+  <form action="/restaurants/new" method="POST">
+
+    {{!-- 餐廳名稱 --}}
+    <div class="mb-3">
+      <label for="name" class="form-label">餐廳名稱</label>
+      <input type="text" class="form-control" id="name" name="name" aria-describedby="name" placeholder="name" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="name_en" class="form-label">餐廳英文名稱</label>
+      <input type="text" class="form-control" name="name_en" id="name_en" placeholder="English Name" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="category">類別</label>
+      <select class="form-control" id="category" placeholder="category" name="category">
+        <option>中東料理</option>
+        <option>日本料理</option>
+        <option>義式餐廳</option>
+        <option>美式</option>
+        <option>酒吧</option>
+        <option>咖啡</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">圖片網址</label>
+      <input type="url" class="form-control" name="image" id="image" placeholder="https://..." required>
+    </div>
+
+    <div class="mb-3">
+      <label for="location" class="form-label">地址</label>
+      <input type="text" class="form-control" name="location" id="location" placeholder="location" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="rating " class="form-label">評價</label>
+      <input type="number" class="form-control" name="rating" id="rating" step="0.1" min="0" max="5"
+        placeholder="rating" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="google_map" class="form-label">goole map 網址</label>
+      <input type="url" class="form-control" name="google_map" id="google_map" placeholder="https://..." required>
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">電話</label>
+      <input type="number" class="form-control" name="phone" id="phone" placeholder="Phone" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">簡介</label>
+      <textarea type="text" class="form-control" name="description" id="description"
+        placeholder="Description"></textarea>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-info">save</button>
+
+  </form>
+  <form action="/" method="GET" style="display: inline;">
+    <button class="btn btn-info m-1" type="submit">back</button>
+  </form>
+</div>
+
+</div>
