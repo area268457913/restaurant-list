@@ -3,7 +3,8 @@ const router = express.Router()
 const Rest = require('../../models/restaurant')
 
 router.get('/', (req, res) => {
-  Rest.find()
+  const userId = req.user._id   // 變數設定
+  Rest.find({ userId })
     .lean()
     .sort({ _id: 'asc' }) //根據 _id 升冪排序
     .then(restaurants => res.render('index', { restaurants }))
