@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session')
 const port = 3000
 const exphbs = require('express-handlebars')
 // const restaurantList = require('./restaurant.json')
@@ -21,6 +22,12 @@ const app = express()
 // mongoose.connect('mongodb://localhost/restaurant', { useNewUrlParser: true, useUnifiedTopology: true })
 app.engine('handlebars', exphbs({ defaultlayout: 'main' }))
 app.set('view engine', 'handlebars')
+
+app.use(session({
+  secret: 'ThisIsMySecret',
+  resave: false,
+  saveUninitialized: true
+}))
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 // 設定每一筆請求都會透過 methodOverride 進行前置處理
