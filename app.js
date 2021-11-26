@@ -2,6 +2,8 @@ const express = require('express')
 const session = require('express-session')
 const usePassport = require('./config/passport')
 const exphbs = require('express-handlebars')
+const passport = require('./config/passport')
+
 // const restaurantList = require('./restaurant.json')
 // const mongoose = require('mongoose')
 // const Todo = require('./models/todo')
