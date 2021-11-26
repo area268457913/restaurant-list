@@ -23,7 +23,7 @@
 
 下載檔案
 
-git clone  https://github.com/area268457913/restaurantList.git
+git clone  https://github.com/area268457913/restaurant-list.git
 
 進入專案目錄
 
